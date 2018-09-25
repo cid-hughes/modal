@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>Modal Test</title>
+  <link rel="stylesheet" href="css/page.css" type="text/css">
+  <link rel="stylesheet" href="css/modal.css" type="text/css">
+  <script type="text/javascript" src="js/modal.js"></script>
+  <script type="text/javascript">
+
+window.addEventListener("load", ()=>{
+    let list = document.getElementById("linkList");
+    [
+        {
+            linkText: "Generic modal, default settings",
+            className: "default",
+            heading: "Modal Heading",
+            exit: "<button>X</button>",
+            content: "Modal Content",
+            actions: [
+                { label: "OK", action: "modal.close();" }
+            ],
+            actionsInContent: true,
+            fullScreen: true,
+            onClick: "",
+            onResize: "",
+            onScroll: "",
+            timeOut: 0
+        },
+        {
+            linkText: "Blank modal, closes on timer",
+            className: "blank",
+            heading: "",
+            exit: "",
+            content: "",
+            actions: "",
+            onClick: "modal.close();",
+            timeOut: 10000
+        },
+        {
+            linkText: "Example alert box, no 'x' button",
+            className: "alert",
+            heading: "Alert!",
+            exit: "",
+            content: "<h1>Warning!</h1><p>This is a modal!</p>",
+            actions: [
+                { label: "OK", action: "modal.close();" }
+            ],
+        },
+        {
+            linkText: "Modal with OK and Cancel buttons",
+            className: "cancel",
+            heading: "Query",
+            exit: "<button>X</button>",
+            content: "Click OK or Cancel.",
+            actions: [
+                { label: "OK", action: "modal.close();" },
+                { label: "Cancel", action: "modal.close();" }
+            ],
+        },
+        {
+            linkText: "Basic Popup Window",
+            className: "popup",
+            heading: "Pop!",
+            exit: "<button>X</button>",
+            content: "Hey there!",
+            actions: [
+                { label: "OK", action: "modal.close();" }
+            ],
+            fullScreen: false,
+            timeOut: 10000
+        }
+    ].forEach(settings=>{
+        let modal = new Modal(settings);
+        let li = document.createElement("li");
+        let link = document.createElement("a");
+        link.href = "javascript:void(0);";
+        link.addEventListener("click", (modal=>()=>modal.render())(modal));
+        link.innerHTML = settings.linkText;
+        li.appendChild(link);
+        list.appendChild(li);
+    });
+});
+
+  </script>
+ </head>
+<!----------------------------------------------------------------------------->
+ <body>
+  <div class="page">
+   <h1>Modal Test</h1>
+   <ul id="linkList"></ul>
+  </div>
+ </body>
+</html>

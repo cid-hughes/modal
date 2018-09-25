@@ -1,0 +1,210 @@
+.default.modal {
+
+}
+.default.modal > .box {
+    margin: 10% auto;
+    width: 10%;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: #EEEEEE;
+    box-shadow: 0px 5px 5px #808080;
+}
+.default.modal > .box > .heading {
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    border-color: #B0B0B0;
+    background-color: #DDDDFF;
+    padding: 2px;
+    text-align: center;
+    font-family: Verdana, sans-serif;
+    font-size: 1.2em;
+    font-width: bold;
+}
+.default.modal > .box > .heading > .exit {
+    margin: 2px;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+}
+.default.modal > .box > .content {
+    padding: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+}
+.default.modal > .box > .content > .actions {
+    margin: 20px 0 5px 0;
+    text-align: center;
+}
+.default.modal > .box > .content > .action > button {
+    margin: 0;
+    width: 60px;
+    padding: 2px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+}
+/**************************************/
+.blank.modal {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.blank.modal > .box {
+    margin: 1% auto;
+    width: 20%;
+    height: 10%;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 5px 5px #404040;
+}
+.blank.modal > .box > .content {
+    padding: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+}
+.blank.modal > .box > .content > .exit {
+    border-color: #000000;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    padding: 0 4px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+.blank.modal > .box > .content h1 {
+    text-align: center;
+}
+/**************************************/
+.alert.modal {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.alert.modal > .box {
+    margin: 5% auto;
+    width: 20%;
+    border: 1px solid #FF0000;
+    border-radius: 5px;
+    background-color: #FF8080;
+    box-shadow: 0px 0px 10px 5px #FFFFDD;
+}
+.alert.modal > .box > .heading {
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    border-color: #FF0000;
+    background-color: #FFFF80;
+    text-align: center;
+    font-family: Verdana, sans-serif;
+    font-size: 1.2em;
+}
+.alert.modal > .box > .content {
+    padding: 5px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+}
+.alert.modal > .box > .content > .actions {
+    margin: 20px 0 5px 0;
+    text-align: center;
+}
+.alert.modal > .box > .content > .action > button {
+    margin: 0;
+    width: 60px;
+    border-color: #FF0000;
+    background-color: #FFFF80;
+    padding: 2px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+}
+/**************************************/
+.cancel.modal {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.cancel.modal > .box {
+    margin: 10% auto;
+    width: 10%;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: #EEEEEE;
+    box-shadow: 0px 5px 5px #808080;
+}
+.cancel.modal > .box > .heading {
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    border-color: #B0B0B0;
+    background-color: #DDDDFF;
+    padding: 2px;
+    text-align: center;
+    font-family: Verdana, sans-serif;
+    font-size: 1.2em;
+    font-width: bold;
+}
+.cancel.modal > .box > .heading > .exit {
+    margin: 2px;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+}
+.cancel.modal > .box > .content {
+    padding: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+}
+.cancel.modal > .box > .content > .actions {
+    margin: 20px 0 5px 0;
+    text-align: center;
+}
+.cancel.modal > .box > .content > .action > button {
+    margin: 0;
+    width: 60px;
+    padding: 2px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+}
+/**************************************/
+.popup.modal.box {
+    margin: 5% auto;
+    width: 10%;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: #EEEEEE;
+    box-shadow: 0px 5px 5px #808080;
+}
+.popup.modal.box > .heading {
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    border-color: #B0B0B0;
+    background-color: #DDDDFF;
+    padding: 2px;
+    text-align: center;
+    font-family: Verdana, sans-serif;
+    font-size: 1.2em;
+    font-width: bold;
+}
+.popup.modal.box > .heading > .exit {
+    margin: 2px;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+}
+.popup.modal.box > .content {
+    padding: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+}
+.popup.modal.box > .content > .actions {
+    margin: 20px 0 5px 0;
+    text-align: center;
+}
+.popup.modal.box > .content > .action > button {
+    margin: 0;
+    width: 60px;
+    padding: 2px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+}
