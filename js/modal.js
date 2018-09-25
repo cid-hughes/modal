@@ -36,7 +36,6 @@ function Modal(options) {
         /**************************************/
         box = document.createElement("div");
         box.classList.add("box");
-        box.style.overflow = "hidden";
         this.e.appendChild(box);
     } else {
         this.e = box = document.createElement("div");
@@ -44,13 +43,11 @@ function Modal(options) {
         this.e.classList.add("modal", "box");
         if (options.className) this.e.classList.add(options.className);
         box.style.zIndex = "500";
-        box.style.overflow = "hidden";
     }
     /**************************************/
     let heading = document.createElement("div");
     if (options.heading) {
         heading.classList.add("heading");
-        heading.style.overflow = "hidden";
         heading.innerHTML = options.heading;
         box.appendChild(heading);
     }
