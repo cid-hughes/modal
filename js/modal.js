@@ -25,14 +25,17 @@ function Modal(options) {
         let box;
     if (options.fullScreen) {
         this.e = document.createElement("div");
-        if (options.id) e.id = options.id;
+        if (options.id) this.e.id = options.id;
         this.e.classList.add("modal");
         if (options.className) this.e.classList.add(options.className);
         this.e.style.position = "fixed";
         this.e.style.top = this.e.style.left = "0";
         this.e.style.width = this.e.style.height = "100%";
         this.e.style.zIndex = "500";
-        if (options.onClick) this.e.addEventListener("click", ()=>Function("modal", options.onClick)(this));
+        if (options.onClick) {
+            if (typeof options.onClick == "function") this.e.addEventListener("click", (modal=>options.conClick)(this));
+            else this.e.addEventListener("click", ()=>Function("modal", options.onClick)(this));
+        }
         /**************************************/
         box = document.createElement("div");
         box.classList.add("box");
@@ -76,7 +79,8 @@ function Modal(options) {
         options.actions.forEach(action=>{
             let button = document.createElement("button");
             button.innerHTML = action.label;
-            button.addEventListener("click", ()=>Function("modal", action.action)(this));
+            if (typeof action.action == "function") button.addEventListener("click", (modal=>action.action)(this));
+            else button.addEventListener("click", ()=>Function("modal", action.action)(this));
             actions.appendChild(button);
         });
         if (options.actionsInContent) content.appendChild(actions);
@@ -87,16 +91,28 @@ function Modal(options) {
 Modal.prototype.render = function(e) {
     if (this.isRendered) return;
     (e || document.body).appendChild(this.e);
-    if (this.onResize) window.addEventListener("resize", ()=>Function("modal", this.onResize)(this));
-    if (this.onScroll) window.addEventListener("scroll", ()=>Function("modal", this.onScroll)(this));
+    if (this.onResize) {
+        if (typeof this.onResize == "function") window.addEventListener("resize", (modal=>this.onResize)(this));
+        else window.addEventListener("resize", ()=>Function("modal", this.onResize)(this));
+    }
+    if (this.onScroll) {
+        if (typeof this.onScroll == "function") window.addEventListener("scroll", (modal=>this.onScroll)(this));
+        else window.addEventListener("scroll", ()=>Function("modal", this.onScroll)(this));
+    }
     if (this.timeOut) this._to = setTimeout(()=>this.close(), this.timeOut);
     this.isRendered = true;
 }
 Modal.prototype.close = function() {
     if (!this.isRendered) return;
     this.e.parentNode.removeChild(this.e);
-    if (this.onResize) window.removeEventListener("resize", ()=>Function("modal", this.onResize)(this));
-    if (this.onScroll) window.removeEventListener("scroll", ()=>Function("modal", this.onScroll)(this));
+    if (this.onResize) {
+        if (typeof this.onResize == "function") window.removeEventListener("resize", (modal=>this.onResize)(this));
+        else window.removeEventListener("resize", ()=>Function("modal", this.onResize)(this));
+    }
+    if (this.onScroll) {
+        if (typeof this.onScroll == "function") window.removeEventListener("scroll", (modal=>this.onScroll)(this));
+        else window.removeEventListener("scroll", ()=>Function("modal", this.onScroll)(this));
+    }
     if (this.timeOut) clearTimeout(this._to);
     this.isRendered = false;
 }
